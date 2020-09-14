@@ -169,7 +169,7 @@ public final class Presentacion_Actualizado extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String valor = actualizar_tf.getText();
-        crud.ActualizarEnvase(tp2, valor);
+        crud.ActualizarPresentacion(tp2, valor);
         setVisible(false);
         Presentaciones t_p = new Presentaciones(new javax.swing.JFrame(), true);
         t_p.setVisible(true);
@@ -185,7 +185,7 @@ public final class Presentacion_Actualizado extends javax.swing.JDialog {
         int a = JOptionPane.showConfirmDialog(null, "SEGURO QUE DESEAS ELIMINAR");
 
         if (a == JOptionPane.YES_OPTION) {
-            crud.EliminarEnvase(tp2);
+            crud.EliminarPresentacion(tp2);
             setVisible(false);
             Presentaciones t_p = new Presentaciones(new javax.swing.JFrame(), true);
             t_p.setVisible(true);

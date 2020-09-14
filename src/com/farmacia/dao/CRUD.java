@@ -1715,15 +1715,15 @@ public class CRUD {
         }
     }
 
-    public void ActualizarEnvase(PresentacionProducto en, String valor) {
+    public void ActualizarPresentacion(PresentacionProducto pre, String valor) {
         String msg;
         try {
             conect = con.conectar();
             conect.setAutoCommit(false);
             CallableStatement cs = conect.prepareCall(
-                    "{ call Actualizar_Envase(?,?,?) }");
+                    "{ call Actualizar_Presentaciones(?,?,?) }");
             cs.setString(1, valor);
-            cs.setLong(2, en.getId_presentaciones());
+            cs.setLong(2, pre.getId_presentaciones());
             cs.registerOutParameter("salida", Types.VARCHAR);
             cs.executeUpdate();
             msg = cs.getString("salida");
@@ -1740,13 +1740,13 @@ public class CRUD {
         }
     }
 
-    public void EliminarEnvase(PresentacionProducto en) {
+    public void EliminarPresentacion(PresentacionProducto en) {
         String msg;
         try {
             conect = con.conectar();
             conect.setAutoCommit(false);
             CallableStatement cs = conect.prepareCall(
-                    "{ call Eliminar_Envase(?,?) }");
+                    "{ call Eliminar_Presentaciones(?,?) }");
             cs.setLong(1, en.getId_presentaciones());
             cs.registerOutParameter("salida", Types.VARCHAR);
             cs.executeUpdate();
