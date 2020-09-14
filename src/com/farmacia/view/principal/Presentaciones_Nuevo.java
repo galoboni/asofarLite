@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.farmacia.view.principal;
 
 import com.farmacia.dao.CRUD;
@@ -10,10 +6,6 @@ import com.farmacia.entities1.Listar_usuario;
 import java.awt.MouseInfo;
 import java.awt.Point;
 
-/**
- *
- * @author michaels
- */
 public class Presentaciones_Nuevo extends javax.swing.JDialog {
     int x,y;
     CRUD crud = new CRUD();
