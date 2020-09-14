@@ -12,12 +12,6 @@ public class Presentaciones_Nuevo extends javax.swing.JDialog {
     Presentaciones tipo = new Presentaciones(new javax.swing.JFrame(), true);
     String usuario=null;
 
-    /**
-     * Creates new form Tipo_Actualizado
-     *
-     * @param parent
-     * @param modal
-     */
     public Presentaciones_Nuevo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         setUndecorated(true);
