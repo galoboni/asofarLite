@@ -298,7 +298,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu6.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
 
         jMenuItem2.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
-        jMenuItem2.setText("ENVASES");
+        jMenuItem2.setText("PRESENTACIONES");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -325,7 +325,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu6.add(jMenuItem4);
 
         jMenuItem5.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
-        jMenuItem5.setText("CATEGORIAS");
+        jMenuItem5.setText("TIPOS");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);

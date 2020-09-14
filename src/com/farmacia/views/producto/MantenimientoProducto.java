@@ -188,7 +188,7 @@ public class MantenimientoProducto extends javax.swing.JDialog {
         });
 
         tipofiltro.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        tipofiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CODIGO", "NOMBRE", "TIPO", "MEDIDA", "ENVASE", "MARCA" }));
+        tipofiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CODIGO", "NOMBRE", "TIPO", "MEDIDA", "PRESENTACION", "MARCA" }));
         tipofiltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipofiltroActionPerformed(evt);
@@ -214,7 +214,7 @@ public class MantenimientoProducto extends javax.swing.JDialog {
                 .addGap(166, 166, 166))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tipofiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tipofiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -334,7 +334,7 @@ public class MantenimientoProducto extends javax.swing.JDialog {
             query = fil.comboProductoMedida() + f + "%'";
         }
         if (pos == 4) {
-            query = fil.comboProductoEnvase() + f + "%'";
+            query = fil.comboProductoPresentacion() + f + "%'";
         }
         if (pos == 5) {
             query = fil.comboProductoMarca() + f + "%'";
@@ -342,7 +342,7 @@ public class MantenimientoProducto extends javax.swing.JDialog {
         // System.err.println(query);
         listar = crud.filtroBusquedaProducto(query);
         // System.err.println(query);
-        Tablas.cargarFiltroProductos(tbacargarProductos, listar);
+        Tablas.cargarJoinProductosMCompra(tbacargarProductos, listar);
         query = "";
 
     }//GEN-LAST:event_filtrarActionPerformed

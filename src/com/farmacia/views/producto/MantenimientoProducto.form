@@ -63,7 +63,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="tipofiltro" min="-2" pref="115" max="-2" attributes="0"/>
+                  <Component id="tipofiltro" min="-2" pref="143" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="filtro" min="-2" pref="200" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -268,7 +268,7 @@
                 <StringItem index="1" value="NOMBRE"/>
                 <StringItem index="2" value="TIPO"/>
                 <StringItem index="3" value="MEDIDA"/>
-                <StringItem index="4" value="ENVASE"/>
+                <StringItem index="4" value="PRESENTACION"/>
                 <StringItem index="5" value="MARCA"/>
               </StringArray>
             </Property>
