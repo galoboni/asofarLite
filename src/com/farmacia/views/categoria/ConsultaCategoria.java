@@ -266,9 +266,9 @@ public class ConsultaCategoria extends javax.swing.JDialog {
             int id = tablaCategoria.getSelectedRow();
             categoriap = devuelveObjeto(Integer.valueOf(tablaCategoria.getValueAt(id, 0).toString()),categoria);
             if (categoriap != null) {
-                //EditarMarcas em = new EditarMarcas(new javax.swing.JFrame(), true, categoriap);
-                //setVisible(false);
-                //em.setVisible(true);
+                EditarCategoria em = new EditarCategoria(new javax.swing.JFrame(), true, categoriap);
+                setVisible(false);
+                em.setVisible(true);
             }
         }
     }//GEN-LAST:event_tablaCategoriaMousePressed
@@ -294,9 +294,9 @@ public class ConsultaCategoria extends javax.swing.JDialog {
             categoriap = devuelveObjeto(Integer.valueOf(tablaCategoria.getValueAt(id, 0).toString()), categoria);
             if (categoriap != null) {
                 
-                //EditarMarcas em = new EditarMarcas(new javax.swing.JFrame(), true, categoriap);
-                //setVisible(false);
-                //em.setVisible(true);
+                EditarCategoria em = new EditarCategoria(new javax.swing.JFrame(), true, categoriap);
+                setVisible(false);
+                em.setVisible(true);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Selecione un registro de la tabla primero");
