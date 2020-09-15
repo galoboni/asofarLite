@@ -1896,6 +1896,39 @@ public class CRUD {
         }
         return valor;
     }
+    
+    //CTEGORIA
+    public String editarCategoriaProducto(String nombre, Long id) {
+        String valor = null;
+        try {
+            conect = con.conectar();
+            conect.setAutoCommit(false);
+            CallableStatement prcProcedimientoAlmacenado = conect.prepareCall(""
+                    + "{ CALL Actualizar_Categoria(?,?,?) }");
+            prcProcedimientoAlmacenado.setString(1, nombre);
+            prcProcedimientoAlmacenado.setLong(2, id);
+            prcProcedimientoAlmacenado.registerOutParameter("salida", Types.VARCHAR);
+            prcProcedimientoAlmacenado.executeUpdate();
+            valor = prcProcedimientoAlmacenado.getString("salida");//voy revisar mi codigo
+            System.out.println(valor);
+            conect.commit();
+        } catch (Exception e) {
+            try {
+                conect.rollback();
+                e.printStackTrace();
+            } catch (SQLException ex) {
+                Logger.getLogger(ValidarIngresoProducto.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } finally {
+            try {
+                conect.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ValidarIngresoProducto.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return valor;
+    }
+    //
 
     // marca
     public String editarMarcaProducto(String nombre, Long id) {
@@ -1928,6 +1961,38 @@ public class CRUD {
         }
         return valor;
     }
+    
+    //CATEGORIA
+    public String eliminarCategoriaProducto(CategoriaProducto mdp) {
+        String valor = null;
+        try {
+            conect = con.conectar();
+            conect.setAutoCommit(false);
+            CallableStatement prcProcedimientoAlmacenado = conect.prepareCall(""
+                    + "{ CALL Eliminar_Categoria(?,?) }");
+            prcProcedimientoAlmacenado.setLong(1, mdp.getId_categoria());
+            prcProcedimientoAlmacenado.registerOutParameter("salida", Types.VARCHAR);
+            prcProcedimientoAlmacenado.executeUpdate();
+            valor = prcProcedimientoAlmacenado.getString("salida");//voy revisar mi codigo
+            System.out.println(valor);
+            conect.commit();
+        } catch (Exception e) {
+            try {
+                conect.rollback();
+                e.printStackTrace();
+            } catch (SQLException ex) {
+                Logger.getLogger(ValidarIngresoProducto.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } finally {
+            try {
+                conect.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ValidarIngresoProducto.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return valor;
+    }
+    //
 
     public String eliminarMarcaProducto(MarcaProducto mdp) {
         String valor = null;

@@ -7,6 +7,7 @@ package com.farmacia.views.categoria;
 
 import com.farmacia.views.marca.*;
 import com.farmacia.dao.CRUD;
+import com.farmacia.entities1.CategoriaProducto;
 import com.farmacia.entities1.MarcaProducto;
 import java.awt.MouseInfo;
 import java.awt.Point;
@@ -21,20 +22,20 @@ public class EditarCategoria extends javax.swing.JDialog {
     int x,y;
     CRUD validar = new CRUD();
     static Long pos;
-    static MarcaProducto obj = new MarcaProducto();
+    static CategoriaProducto obj = new CategoriaProducto();
 
-    public EditarCategoria(java.awt.Frame parent, boolean modal, MarcaProducto mdp) {
+    public EditarCategoria(java.awt.Frame parent, boolean modal, CategoriaProducto mdp) {
         super(parent, modal);
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
         obj = mdp;
-        pos = mdp.getId_Marcas();
+        pos = mdp.getId_categoria();
         llenardatos(mdp);
     }
 
-    public void llenardatos(MarcaProducto mdp1) {
-        txtnuevaMedida.setText(mdp1.getNombreMarca());
+    public void llenardatos(CategoriaProducto mdp1) {
+        txtnuevaCategoria.setText(mdp1.getNombreCategoria());
 
     }
 
@@ -49,7 +50,7 @@ public class EditarCategoria extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        txtnuevaMedida = new javax.swing.JTextField();
+        txtnuevaCategoria = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         salir_btn = new javax.swing.JButton();
         eliminar_bt = new javax.swing.JButton();
@@ -63,16 +64,16 @@ public class EditarCategoria extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         jLabel3.setText("CATEGORIA:");
 
-        txtnuevaMedida.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtnuevaMedida.setBorder(null);
-        txtnuevaMedida.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtnuevaCategoria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtnuevaCategoria.setBorder(null);
+        txtnuevaCategoria.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtnuevaMedidaFocusLost(evt);
+                txtnuevaCategoriaFocusLost(evt);
             }
         });
-        txtnuevaMedida.addActionListener(new java.awt.event.ActionListener() {
+        txtnuevaCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnuevaMedidaActionPerformed(evt);
+                txtnuevaCategoriaActionPerformed(evt);
             }
         });
 
@@ -129,7 +130,7 @@ public class EditarCategoria extends javax.swing.JDialog {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtnuevaMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtnuevaCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -146,7 +147,7 @@ public class EditarCategoria extends javax.swing.JDialog {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtnuevaMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtnuevaCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -170,14 +171,14 @@ public class EditarCategoria extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtnuevaMedidaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnuevaMedidaFocusLost
+    private void txtnuevaCategoriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnuevaCategoriaFocusLost
         // TODO add your handling code here:
-        txtnuevaMedida.setText(txtnuevaMedida.getText().toUpperCase());
-    }//GEN-LAST:event_txtnuevaMedidaFocusLost
+        txtnuevaCategoria.setText(txtnuevaCategoria.getText().toUpperCase());
+    }//GEN-LAST:event_txtnuevaCategoriaFocusLost
 
-    private void txtnuevaMedidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnuevaMedidaActionPerformed
+    private void txtnuevaCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnuevaCategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnuevaMedidaActionPerformed
+    }//GEN-LAST:event_txtnuevaCategoriaActionPerformed
 
     private void salir_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salir_btnActionPerformed
         // TODO add your handling code here:
@@ -191,9 +192,9 @@ public class EditarCategoria extends javax.swing.JDialog {
         int a = JOptionPane.showConfirmDialog(null, "SEGURO QUE DESEAS ELIMINAR");
 
         if (a == JOptionPane.YES_OPTION) {
-             String d = validar.eliminarMarcaProducto(obj);
-                    JOptionPane.showMessageDialog(null, "DATO ELIMINADO");
-                    ConsultaMarcas mn = new ConsultaMarcas(new javax.swing.JFrame(), true);
+             String d = validar.eliminarCategoriaProducto(obj);
+                    JOptionPane.showMessageDialog(null,d);
+                    ConsultaCategoria mn = new ConsultaCategoria(new javax.swing.JFrame(), true);
                     setVisible(false);
                     mn.setVisible(true);
         }
@@ -201,9 +202,9 @@ public class EditarCategoria extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        String d = validar.editarMarcaProducto(txtnuevaMedida.getText(), obj.getId_Marcas());
+        String d = validar.editarCategoriaProducto(txtnuevaCategoria.getText(), obj.getId_categoria());
         JOptionPane.showMessageDialog(this, d);
-        ConsultaMarcas mm = new ConsultaMarcas(new javax.swing.JFrame(), true);
+        ConsultaCategoria mm = new ConsultaCategoria(new javax.swing.JFrame(), true);
         setVisible(false);
         mm.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -311,7 +312,7 @@ public class EditarCategoria extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                EditarMarcas dialog = new EditarMarcas(new javax.swing.JFrame(), true, obj);
+                EditarCategoria dialog = new EditarCategoria(new javax.swing.JFrame(), true, obj);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -330,6 +331,6 @@ public class EditarCategoria extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton salir_btn;
-    private javax.swing.JTextField txtnuevaMedida;
+    private javax.swing.JTextField txtnuevaCategoria;
     // End of variables declaration//GEN-END:variables
 }

@@ -306,7 +306,7 @@ public class ConsultaCategoria extends javax.swing.JDialog {
 
     private void nuevo_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevo_btnActionPerformed
         // TODO add your handling code here:
-        AgregarMarcas1 am = new AgregarMarcas1(new javax.swing.JFrame(), true);
+        AgregarCategoria am = new AgregarCategoria(new javax.swing.JFrame(), true);
         setVisible(false);
         am.setVisible(true);
     }//GEN-LAST:event_nuevo_btnActionPerformed

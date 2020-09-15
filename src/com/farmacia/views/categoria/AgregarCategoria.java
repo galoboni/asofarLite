@@ -42,7 +42,7 @@ public class AgregarCategoria extends javax.swing.JDialog {
         salir_btn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btnaceptar = new javax.swing.JButton();
-        txtnuevamedida = new javax.swing.JTextField();
+        txtnuevaCategoria = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -86,10 +86,10 @@ public class AgregarCategoria extends javax.swing.JDialog {
             }
         });
 
-        txtnuevamedida.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtnuevamedida.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtnuevaCategoria.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtnuevaCategoria.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtnuevamedidaFocusLost(evt);
+                txtnuevaCategoriaFocusLost(evt);
             }
         });
 
@@ -112,7 +112,7 @@ public class AgregarCategoria extends javax.swing.JDialog {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtnuevamedida, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtnuevaCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
         jPanel4Layout.setVerticalGroup(
@@ -122,7 +122,7 @@ public class AgregarCategoria extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtnuevamedida, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtnuevaCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnaceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,9 +146,9 @@ public class AgregarCategoria extends javax.swing.JDialog {
 
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         try {
-            String d = validar.validarMarcaProducto(txtnuevamedida.getText());
+            String d = validar.validarCategoriaProducto(txtnuevaCategoria.getText());
             JOptionPane.showMessageDialog(this, d);
-            ConsultaMarcas mm = new ConsultaMarcas(new javax.swing.JFrame(), true);
+            ConsultaCategoria mm = new ConsultaCategoria(new javax.swing.JFrame(), true);
             setVisible(false);
             mm.setVisible(true);
         } catch (HeadlessException ex) {
@@ -157,9 +157,9 @@ public class AgregarCategoria extends javax.swing.JDialog {
 
     }//GEN-LAST:event_btnaceptarActionPerformed
 
-    private void txtnuevamedidaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnuevamedidaFocusLost
-        txtnuevamedida.setText(txtnuevamedida.getText().toUpperCase());
-    }//GEN-LAST:event_txtnuevamedidaFocusLost
+    private void txtnuevaCategoriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnuevaCategoriaFocusLost
+        txtnuevaCategoria.setText(txtnuevaCategoria.getText().toUpperCase());
+    }//GEN-LAST:event_txtnuevaCategoriaFocusLost
 
     private void salir_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salir_btnActionPerformed
         // TODO add your handling code here:
@@ -266,6 +266,6 @@ public class AgregarCategoria extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton salir_btn;
-    private javax.swing.JTextField txtnuevamedida;
+    private javax.swing.JTextField txtnuevaCategoria;
     // End of variables declaration//GEN-END:variables
 }

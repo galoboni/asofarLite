@@ -51,7 +51,7 @@
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="txtnuevaMedida" min="-2" pref="160" max="-2" attributes="0"/>
+                  <Component id="txtnuevaCategoria" min="-2" pref="160" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -71,7 +71,7 @@
                   <Component id="jLabel4" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtnuevaMedida" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="txtnuevaCategoria" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -94,7 +94,7 @@
             <Property name="text" type="java.lang.String" value="CATEGORIA:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtnuevaMedida">
+        <Component class="javax.swing.JTextField" name="txtnuevaCategoria">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>
@@ -104,8 +104,8 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtnuevaMedidaFocusLost"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtnuevaMedidaActionPerformed"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtnuevaCategoriaFocusLost"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtnuevaCategoriaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">

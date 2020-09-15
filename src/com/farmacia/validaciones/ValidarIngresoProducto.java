@@ -114,6 +114,38 @@ public class ValidarIngresoProducto {
         return valor;
     }
     
+    //CATEGORIA INGRESAR
+        public String validarCategoriaProducto(String nombre) {
+        String valor =null;
+        try {
+            conect = con.conectar();
+            conect.setAutoCommit(false);
+            CallableStatement prcProcedimientoAlmacenado = conect.prepareCall(""
+            + "{ CALL Insertar_Categoria(?,?) }");// 
+            prcProcedimientoAlmacenado.setString(1, nombre);
+            prcProcedimientoAlmacenado.registerOutParameter("salida", Types.VARCHAR);
+            prcProcedimientoAlmacenado.executeUpdate();
+            valor = prcProcedimientoAlmacenado.getString("salida");//voy revisar mi codigo
+            System.out.println(valor);
+            conect.commit();
+        } catch (Exception e) {
+            try {
+                conect.rollback();
+                e.printStackTrace();
+            } catch (SQLException ex) {
+                Logger.getLogger(ValidarIngresoProducto.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } finally {
+            try {
+                conect.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ValidarIngresoProducto.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return valor;
+    }
+    //
+    
     public String validarMarcaProducto(String nombre) {
         String valor =null;
         try {
