@@ -197,7 +197,7 @@ public class Tablas {
         tcr.setHorizontalAlignment(SwingConstants.CENTER);
         tcr1.setHorizontalAlignment(SwingConstants.RIGHT);
         model = Tablas.VaciarTabla(Tabla);
-        String[] Co = {"CODIGO", "PRODUCTO", "TIPO", "MEDIDA", "PRESENTACION", "MARCA"};
+        String[] Co = {"CODIGO", "PRODUCTO", "TIPO", "PRESENTACION","MEDIDA", "MARCA"};
         String[] Filas = new String[6];
         model = new DefaultTableModel(null, Co);
         Tabla.setShowGrid(true);
@@ -205,8 +205,8 @@ public class Tablas {
             Filas[0] = "" + lista.get(i).getId_productos().toString();
             Filas[1] = lista.get(i).getNombreProductos();
             Filas[2] = lista.get(i).getNombreTipo();
-            Filas[3] = lista.get(i).getNombreMedida();
-            Filas[4] = lista.get(i).getNombrePresentacion();
+            Filas[3] = lista.get(i).getNombrePresentacion();
+            Filas[4] = lista.get(i).getNombreMedida();
             Filas[5] = lista.get(i).getNombreMarca();
             model.addRow(Filas);
             Tabla.setModel(model);
