@@ -14,6 +14,7 @@ public class Productos {
     private Long id_marcas;
     private Long id_medidas;
     private Long id_presentacion;
+    private Long id_categoria;
     private String nombre;
     private String descripcion;
     private double peso;
@@ -29,12 +30,13 @@ public class Productos {
     public Productos() {
     }
 
-    public Productos(Long id_productos, Long id_tipo, Long id_marcas, Long id_medidas, Long id_presentacion, String nombre, String descripcion, double peso, Date fecha_registro, String estado, Long id_usuario, String iva, Long cantidad_minima, String receta, Long unidades, String codigo_barras) {
+    public Productos(Long id_productos, Long id_tipo, Long id_marcas, Long id_medidas, Long id_presentacion,Long id_categoria, String nombre, String descripcion, double peso, Date fecha_registro, String estado, Long id_usuario, String iva, Long cantidad_minima, String receta, Long unidades, String codigo_barras) {
         this.id_productos = id_productos;
         this.id_tipo = id_tipo;
         this.id_marcas = id_marcas;
         this.id_medidas = id_medidas;
         this.id_presentacion = id_presentacion;
+        this.id_categoria = id_categoria;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.peso = peso;
@@ -79,7 +81,7 @@ public class Productos {
     public void setId_medidas(Long id_medidas) {
         this.id_medidas = id_medidas;
     }
-
+ 
     public Long getId_presentacion() {
         return id_presentacion;
     }
@@ -87,7 +89,15 @@ public class Productos {
     public void setId_presentacion(Long id_presentacion) {
         this.id_presentacion = id_presentacion;
     }
+    //id_categoria
+    
+    public Long getId_categoria() {
+        return id_categoria;
+    }
 
+    public void setId_categoria(Long id_categoria) {
+        this.id_categoria = id_categoria;
+    }
     public String getNombre() {
         return nombre;
     }

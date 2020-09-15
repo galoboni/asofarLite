@@ -637,7 +637,7 @@ public class CRUD {
             conect = con.conectar();
             conect.setAutoCommit(false);
             CallableStatement prodProAlm = conect.prepareCall(
-                    "{ call ingresarProducto(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }");
+                    "{ call ingresarProducto(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }");
             prodProAlm.setString(1, obj.getCodigo_barras());
             prodProAlm.setString(2, obj.getNombre());
             prodProAlm.setString(3, obj.getDescripcion());
@@ -645,13 +645,14 @@ public class CRUD {
             prodProAlm.setDouble(5, obj.getPeso());
             prodProAlm.setLong(6, obj.getId_tipo());
             prodProAlm.setLong(7, obj.getId_medidas());
-            prodProAlm.setLong(8, obj.getId_presentacion());
-            prodProAlm.setLong(9, obj.getId_marcas());
-            prodProAlm.setLong(10, obj.getId_usuario());
-            prodProAlm.setString(11, obj.getIva());
-            prodProAlm.setLong(12, obj.getCantidad_minima());
-            prodProAlm.setString(13, obj.getReceta());
-            prodProAlm.setLong(14, obj.getUnidades());
+            prodProAlm.setLong(8, obj.getId_categoria());//categoria
+            prodProAlm.setLong(9, obj.getId_presentacion());
+            prodProAlm.setLong(10, obj.getId_marcas());
+            prodProAlm.setLong(11, obj.getId_usuario());
+            prodProAlm.setString(12, obj.getIva());
+            prodProAlm.setLong(13, obj.getCantidad_minima());
+            prodProAlm.setString(14, obj.getReceta());
+            prodProAlm.setLong(15, obj.getUnidades());
             prodProAlm.registerOutParameter("valor1", Types.VARCHAR);
             prodProAlm.executeUpdate();
             valor = prodProAlm.getString("valor1");
@@ -2180,20 +2181,21 @@ public class CRUD {
             conect = con.conectar();
             conect.setAutoCommit(false);
             CallableStatement prodProAlm = conect.prepareCall(
-                    "{ call BuscarIDProductoNuevo(?,?,?,?,?,?,?,?,?,?,?,?,?,?) }");
+                    "{ call BuscarIDProductoNuevo(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }");
             prodProAlm.setString(1, obj.getNombre());
             prodProAlm.setString(2, obj.getDescripcion());
             prodProAlm.setDate(3, obj.getFecha_registro());
             prodProAlm.setDouble(4, obj.getPeso());
             prodProAlm.setLong(5, obj.getId_tipo());
             prodProAlm.setLong(6, obj.getId_medidas());
-            prodProAlm.setLong(7, obj.getId_presentacion());
-            prodProAlm.setLong(8, obj.getId_marcas());
-            prodProAlm.setLong(9, obj.getId_usuario());
-            prodProAlm.setString(10, obj.getIva());
-            prodProAlm.setLong(11, obj.getCantidad_minima());
-            prodProAlm.setString(12, obj.getReceta());
-            prodProAlm.setLong(13, obj.getUnidades());
+            prodProAlm.setLong(7, obj.getId_categoria());
+            prodProAlm.setLong(8, obj.getId_presentacion());
+            prodProAlm.setLong(9, obj.getId_marcas());
+            prodProAlm.setLong(10, obj.getId_usuario());
+            prodProAlm.setString(11, obj.getIva());
+            prodProAlm.setLong(12, obj.getCantidad_minima());
+            prodProAlm.setString(13, obj.getReceta());
+            prodProAlm.setLong(14, obj.getUnidades());
             prodProAlm.registerOutParameter("valor1", Types.VARCHAR);
             prodProAlm.executeUpdate();
             valor = prodProAlm.getString("valor1");

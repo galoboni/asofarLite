@@ -307,8 +307,10 @@ public class ConsultaCategoria extends javax.swing.JDialog {
     private void nuevo_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevo_btnActionPerformed
         // TODO add your handling code here:
         AgregarCategoria am = new AgregarCategoria(new javax.swing.JFrame(), true);
-        setVisible(false);
         am.setVisible(true);
+        categoria = crud.listarTodoCategoriaProductos();
+        Tablas.listarCategorias(categoria, tablaCategoria);
+        
     }//GEN-LAST:event_nuevo_btnActionPerformed
 
     private void ReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReporteActionPerformed

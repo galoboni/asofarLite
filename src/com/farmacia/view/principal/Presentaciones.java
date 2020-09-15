@@ -273,9 +273,11 @@ public class Presentaciones extends javax.swing.JDialog {
 
     private void nuevo_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevo_btnActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
+        //setVisible(false);
         Presentaciones_Nuevo tn = new Presentaciones_Nuevo(new javax.swing.JFrame(), true,objUsuario);
         tn.setVisible(true);
+        altp = crud.MostrarPresentacion();
+        Tablas.listarPresentacion(altp, envase_tb);
     }//GEN-LAST:event_nuevo_btnActionPerformed
 
     private void salir_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salir_btnActionPerformed

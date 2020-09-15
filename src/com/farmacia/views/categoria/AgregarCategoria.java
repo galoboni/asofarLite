@@ -148,9 +148,8 @@ public class AgregarCategoria extends javax.swing.JDialog {
         try {
             String d = validar.validarCategoriaProducto(txtnuevaCategoria.getText());
             JOptionPane.showMessageDialog(this, d);
-            ConsultaCategoria mm = new ConsultaCategoria(new javax.swing.JFrame(), true);
             setVisible(false);
-            mm.setVisible(true);
+            
         } catch (HeadlessException ex) {
             Logger.getLogger(ValidarIngresoProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -164,8 +163,7 @@ public class AgregarCategoria extends javax.swing.JDialog {
     private void salir_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salir_btnActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        ConsultaMarcas mm = new ConsultaMarcas(new javax.swing.JFrame(), true);
-        mm.setVisible(true);
+        
     }//GEN-LAST:event_salir_btnActionPerformed
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed

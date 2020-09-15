@@ -6,6 +6,7 @@
 package com.farmacia.conponentes;
 
 import static com.farmacia.conponentes.Tablas.model;
+import com.farmacia.entities1.CategoriaProducto;
 import com.farmacia.entities1.Estado_usuario;
 import com.farmacia.entities1.Genero;
 import com.farmacia.entities1.Iva;
@@ -42,6 +43,32 @@ public class Formulario {
             return null;
         }
     }
+    
+    
+    //CATEGORIA
+    public static DefaultComboBoxModel listarComboCategoriaPro(ArrayList<CategoriaProducto> lista) {
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        Object[] arreglo = arregloCategoria(lista);
+        System.out.println(lista.size() + " tam " + arreglo.length);
+        for (int i = 0; i < arreglo.length; i++) {
+            model.addElement(arreglo[i]);
+        }
+        return model;
+
+    }
+    
+    
+    private static Object[] arregloCategoria(ArrayList<CategoriaProducto> lista) {
+        Object[] arreglo = new Object[lista.size() + 1];
+        arreglo[0] = "Elija una opcion...";
+        for (int i = 0; i < lista.size(); i++) {
+            arreglo[(i + 1)] = lista.get(i).getNombreCategoria();
+        }
+        return arreglo;
+
+    }
+    
+    //
     public static DefaultComboBoxModel listarComboTipoPro(ArrayList<TipoProducto> lista) {
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         Object[] arreglo = arreglo1(lista);

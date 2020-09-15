@@ -150,8 +150,7 @@ public class Presentaciones_Nuevo extends javax.swing.JDialog {
         String valor = insertar_tf.getText();
         crud.InsertarPresentacion(valor,usuario);
         setVisible(false);
-        Presentaciones t_p = new Presentaciones(new javax.swing.JFrame(), true);
-        t_p.setVisible(true);
+        
     }//GEN-LAST:event_guardar_btActionPerformed
 
     private void insertar_tfFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_insertar_tfFocusLost
@@ -161,7 +160,6 @@ public class Presentaciones_Nuevo extends javax.swing.JDialog {
     private void salir_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salir_btnActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        tipo.setVisible(true);
     }//GEN-LAST:event_salir_btnActionPerformed
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
