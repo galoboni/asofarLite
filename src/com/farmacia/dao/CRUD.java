@@ -13,6 +13,7 @@ import com.farmacia.entities1.Cabecera_compra;
 import com.farmacia.entities1.Cabecera_ventas;
 import com.farmacia.entities1.Cantidad_Ventas;
 import com.farmacia.entities1.Cantidad_compras;
+import com.farmacia.entities1.CategoriaProducto;
 import com.farmacia.join_entidades.FaltantesCabeceraDetalles;
 import com.farmacia.join_entidades.ListarJoinProveedor;
 import com.farmacia.join_entidades.joinProductoDetallesFaltantes;
@@ -520,6 +521,46 @@ public class CRUD {
         }
         return lista;
     }
+    
+    
+    //CATEGORIA
+    
+    public ArrayList<CategoriaProducto> listarTodoCategoriaProductos() {
+        ArrayList<CategoriaProducto> lista = new ArrayList<CategoriaProducto>();
+
+        try {
+            conect = con.conectar();
+            conect.setAutoCommit(false);
+            CallableStatement prcProcedimientoAlmacenado = conect.prepareCall(
+                    "{ call listarComboCategoria }");
+            //   prcProcedimientoAlmacenado.setInt(1, op);
+            prcProcedimientoAlmacenado.execute();
+            rs = prcProcedimientoAlmacenado.getResultSet();
+            while (rs.next()) {
+                CategoriaProducto obj = EntidadesMappers.getCategoriaProductoFromResultSet(rs);
+                lista.add(obj);
+            }
+
+            conect.commit();
+        } catch (Exception e) {
+            try {
+                conect.rollback();
+                e.printStackTrace();
+            } catch (SQLException ex) {
+                Logger.getLogger(CRUD.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } finally {
+            try {
+                conect.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(CRUD.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return lista;
+    }
+    
+    
+    //
 
     public ArrayList<MarcaProducto> listarTodoMarcaProductos() {
         ArrayList<MarcaProducto> lista = new ArrayList<MarcaProducto>();

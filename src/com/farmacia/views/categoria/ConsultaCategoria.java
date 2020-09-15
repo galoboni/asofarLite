@@ -8,6 +8,7 @@ package com.farmacia.views.categoria;
 import com.farmacia.views.marca.*;
 import com.farmacia.conponentes.Tablas;
 import com.farmacia.dao.CRUD;
+import com.farmacia.entities1.CategoriaProducto;
 import com.farmacia.entities1.ClaseReporte;
 import com.farmacia.entities1.MarcaProducto;
 import com.farmacia.validaciones.ValidarIngresoProducto;
@@ -37,16 +38,16 @@ import net.sf.jasperreports.view.JRViewer;
 public class ConsultaCategoria extends javax.swing.JDialog {
     int x,y;
     CRUD crud = new CRUD();
-    MarcaProducto medidap;
+    CategoriaProducto categoriap;
     DefaultTableModel model;
-    ArrayList<MarcaProducto> medidas;
+    ArrayList<CategoriaProducto> categoria;
     ValidarIngresoProducto validar = new ValidarIngresoProducto();
     int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
     int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 
     public ConsultaCategoria(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.medidas = crud.listarTodoMarcaProductos();
+        this.categoria = crud.listarTodoCategoriaProductos();
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
@@ -56,11 +57,11 @@ public class ConsultaCategoria extends javax.swing.JDialog {
 
     public void Defecto() {
 
-        Tablas.listarMarcas(medidas, tablamedidas);
+        Tablas.listarCategorias(categoria, tablaCategoria);
         DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
         tcr.setHorizontalAlignment(SwingConstants.CENTER);
-        tablamedidas.getColumnModel().getColumn(0).setCellRenderer(tcr);
-        tablamedidas.getColumnModel().getColumn(1).setCellRenderer(tcr);
+        tablaCategoria.getColumnModel().getColumn(0).setCellRenderer(tcr);
+        tablaCategoria.getColumnModel().getColumn(1).setCellRenderer(tcr);
     }
 
     /**
@@ -81,7 +82,7 @@ public class ConsultaCategoria extends javax.swing.JDialog {
         nuevo_btn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablamedidas = new javax.swing.JTable();
+        tablaCategoria = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -140,7 +141,7 @@ public class ConsultaCategoria extends javax.swing.JDialog {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        tablamedidas.setModel(new javax.swing.table.DefaultTableModel(
+        tablaCategoria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -159,16 +160,16 @@ public class ConsultaCategoria extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        tablamedidas.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        tablamedidas.addMouseListener(new java.awt.event.MouseAdapter() {
+        tablaCategoria.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        tablaCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                tablamedidasMousePressed(evt);
+                tablaCategoriaMousePressed(evt);
             }
         });
-        jScrollPane1.setViewportView(tablamedidas);
-        if (tablamedidas.getColumnModel().getColumnCount() > 0) {
-            tablamedidas.getColumnModel().getColumn(0).setResizable(false);
-            tablamedidas.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(tablaCategoria);
+        if (tablaCategoria.getColumnModel().getColumnCount() > 0) {
+            tablaCategoria.getColumnModel().getColumn(0).setResizable(false);
+            tablaCategoria.getColumnModel().getColumn(1).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -260,21 +261,21 @@ public class ConsultaCategoria extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tablamedidasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablamedidasMousePressed
+    private void tablaCategoriaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaCategoriaMousePressed
         if (evt.getClickCount() == 2) {
-            int id = tablamedidas.getSelectedRow();
-            medidap = devuelveObjeto(Integer.valueOf(tablamedidas.getValueAt(id, 0).toString()), medidas);
-            if (medidap != null) {
-                EditarMarcas em = new EditarMarcas(new javax.swing.JFrame(), true, medidap);
-                setVisible(false);
-                em.setVisible(true);
+            int id = tablaCategoria.getSelectedRow();
+            categoriap = devuelveObjeto(Integer.valueOf(tablaCategoria.getValueAt(id, 0).toString()),categoria);
+            if (categoriap != null) {
+                //EditarMarcas em = new EditarMarcas(new javax.swing.JFrame(), true, categoriap);
+                //setVisible(false);
+                //em.setVisible(true);
             }
         }
-    }//GEN-LAST:event_tablamedidasMousePressed
+    }//GEN-LAST:event_tablaCategoriaMousePressed
 
     private void busqueda_tfKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busqueda_tfKeyReleased
         String valor = busqueda_tf.getText();
-        Tablas.filtro(valor, tablamedidas);
+        Tablas.filtro(valor, tablaCategoria);
     }//GEN-LAST:event_busqueda_tfKeyReleased
 
     private void salir_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salir_btnActionPerformed
@@ -288,13 +289,14 @@ public class ConsultaCategoria extends javax.swing.JDialog {
 
     private void actualizar_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizar_btActionPerformed
         // TODO add your handling code here:
-        int id = tablamedidas.getSelectedRow();
-        if (tablamedidas.getSelectedRow() >= 0) {
-            medidap = devuelveObjeto(Integer.valueOf(tablamedidas.getValueAt(id, 0).toString()), medidas);
-            if (medidap != null) {
-                EditarMarcas em = new EditarMarcas(new javax.swing.JFrame(), true, medidap);
-                setVisible(false);
-                em.setVisible(true);
+        int id = tablaCategoria.getSelectedRow();
+        if (tablaCategoria.getSelectedRow() >= 0) {
+            categoriap = devuelveObjeto(Integer.valueOf(tablaCategoria.getValueAt(id, 0).toString()), categoria);
+            if (categoriap != null) {
+                
+                //EditarMarcas em = new EditarMarcas(new javax.swing.JFrame(), true, categoriap);
+                //setVisible(false);
+                //em.setVisible(true);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Selecione un registro de la tabla primero");
@@ -311,8 +313,8 @@ public class ConsultaCategoria extends javax.swing.JDialog {
 
     private void ReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReporteActionPerformed
         java.util.List lista = new ArrayList();
-        for (int i = 0; i < tablamedidas.getRowCount(); i++) {
-            ClaseReporte medida = new ClaseReporte (tablamedidas.getValueAt(i, 0).toString(),tablamedidas.getValueAt(i, 1).toString());
+        for (int i = 0; i < tablaCategoria.getRowCount(); i++) {
+            ClaseReporte medida = new ClaseReporte (tablaCategoria.getValueAt(i, 0).toString(),tablaCategoria.getValueAt(i, 1).toString());
             lista.add(medida);
         }
         try {
@@ -340,10 +342,10 @@ public class ConsultaCategoria extends javax.swing.JDialog {
         Point point = MouseInfo.getPointerInfo().getLocation();
         setLocation(point.x - x, point.y - y);
     }//GEN-LAST:event_jLabel2MouseDragged
-    public MarcaProducto devuelveObjeto(int cas, ArrayList<MarcaProducto> lista) {
-        MarcaProducto objeto1 = null;
+    public CategoriaProducto devuelveObjeto(int cas, ArrayList<CategoriaProducto> lista) {
+        CategoriaProducto objeto1 = null;
         for (int i = 0; i < lista.size(); i++) {
-            if (cas == lista.get(i).getId_Marcas()) {
+            if (cas == lista.get(i).getId_categoria()) {
                 objeto1 = lista.get(i);
                 break;
             }
@@ -435,6 +437,6 @@ public class ConsultaCategoria extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton nuevo_btn;
     private javax.swing.JButton salir_btn;
-    private javax.swing.JTable tablamedidas;
+    private javax.swing.JTable tablaCategoria;
     // End of variables declaration//GEN-END:variables
 }

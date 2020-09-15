@@ -16,6 +16,7 @@ import com.farmacia.views.Reportes.Reporte_Compra;
 import com.farmacia.views.Reportes.Reporte_Productos_Compras;
 import com.farmacia.views.Reportes.Reporte_Venta;
 import com.farmacia.views.ayuda.Acerca;
+import com.farmacia.views.categoria.ConsultaCategoria;
 //import com.farmacia.views.ayuda.AcercaDe;
 import com.farmacia.views.compras.CabeceraCompra;
 import com.farmacia.views.compras.ListaDePedidos;
@@ -119,10 +120,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         menuProducto = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItemCategoria = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         mnuLaboratorio = new javax.swing.JMenuItem();
         jmIva = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
@@ -297,6 +299,24 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu6.setText("COMPONENTES");
         jMenu6.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
 
+        jMenuItemCategoria.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        jMenuItemCategoria.setText("CATEGORIA");
+        jMenuItemCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCategoriaActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItemCategoria);
+
+        jMenuItem5.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        jMenuItem5.setText("TIPOS");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem5);
+
         jMenuItem2.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jMenuItem2.setText("PRESENTACIONES");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -305,15 +325,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu6.add(jMenuItem2);
-
-        jMenuItem3.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
-        jMenuItem3.setText("MARCAS");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu6.add(jMenuItem3);
 
         jMenuItem4.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         jMenuItem4.setText("MEDIDAS");
@@ -324,14 +335,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem4);
 
-        jMenuItem5.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
-        jMenuItem5.setText("TIPOS");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        jMenuItem3.setText("MARCAS");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem5);
+        jMenu6.add(jMenuItem3);
 
         mnuLaboratorio.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
         mnuLaboratorio.setText("LABORATORIOS");
@@ -830,6 +841,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_mnuAcercaMouseClicked
 
+    private void jMenuItemCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCategoriaActionPerformed
+        //VENTANA MENU CATEGORIA
+        ConsultaCategoria t = new ConsultaCategoria(new javax.swing.JFrame(), true);
+        t.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCategoriaActionPerformed
+
     public Listar_usuario getUsuario() {
         return objUsuario;
     }
@@ -900,6 +917,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jMenuItemCategoria;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JMenu jmCompras;

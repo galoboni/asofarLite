@@ -7,6 +7,7 @@ package com.farmacia.entities.mappers;
 
 import com.farmacia.entities1.Cantidad_Ventas;
 import com.farmacia.entities1.Cantidad_compras;
+import com.farmacia.entities1.CategoriaProducto;
 import com.farmacia.join_entidades.FaltantesCabeceraDetalles;
 import com.farmacia.join_entidades.ListarJoinProveedor;
 
@@ -187,6 +188,19 @@ public class EntidadesMappers {
         }
         return obj;
     }
+    
+    // CTEGORIA
+    public static CategoriaProducto getCategoriaProductoFromResultSet(ResultSet rs) {
+        CategoriaProducto obj = new CategoriaProducto();
+        try {
+            obj.setId_categoria(rs.getLong("ID_CATEGORIA"));
+            obj.setNombreCategoria(rs.getString("NOMBRE"));
+        } catch (SQLException ex) {
+            Logger.getLogger(EntidadesMappers.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return obj;
+    }
+    //
 
     public static MarcaProducto getMarcaProductoFromResultSet(ResultSet rs) {
         MarcaProducto obj = new MarcaProducto();

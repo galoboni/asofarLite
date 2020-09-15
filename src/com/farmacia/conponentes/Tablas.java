@@ -10,6 +10,7 @@ package com.farmacia.conponentes;
 import com.farmacia.dao.Consultas;
 import com.farmacia.entities1.Cantidad_Ventas;
 import com.farmacia.entities1.Cantidad_compras;
+import com.farmacia.entities1.CategoriaProducto;
 import com.farmacia.join_entidades.FaltantesCabeceraDetalles;
 import com.farmacia.join_entidades.ListarJoinProveedor;
 import com.farmacia.join_entidades.joinProductoDetallesFaltantes;
@@ -606,6 +607,36 @@ public class Tablas {
         }
 
     }
+    
+    //CATEGORIA
+    public static void listarCategorias(ArrayList<CategoriaProducto> lista, JTable Tabla) {
+        int[] a = {10, 30};
+        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
+        DefaultTableCellRenderer tcr1 = new DefaultTableCellRenderer();
+        tcr.setHorizontalAlignment(SwingConstants.CENTER);
+        tcr1.setHorizontalAlignment(SwingConstants.RIGHT);
+        model = VaciarTabla(Tabla);
+        String[] Co = {"ID", "CATEGORIA"};
+        //   Date[] Ca = {Date.valueOf("Fecha")};
+        String[] Filas = new String[5];
+        //  Date[] Fila = new Date [1];
+        model = new DefaultTableModel(null, Co);
+        //  laboratorio = new DefaultTableModel(null, Ca);
+        Tabla.setShowGrid(true);
+        for (int i = 0; i < lista.size(); i++) {
+            Filas[0] = lista.get(i).getId_categoria().toString();
+            Filas[1] = lista.get(i).getNombreCategoria();
+            model.addRow(Filas);
+            Tabla.setModel(model);
+            Tabla.getColumnModel().getColumn(0).setPreferredWidth(a[0]);
+            Tabla.getColumnModel().getColumn(0).setCellRenderer(tcr);
+            Tabla.getColumnModel().getColumn(1).setPreferredWidth(a[1]);
+            Tabla.getColumnModel().getColumn(1).setCellRenderer(tcr);
+
+        }
+
+    }
+    //
 
     public static void listarMarcas(ArrayList<MarcaProducto> lista, JTable Tabla) {
         int[] a = {15, 30};
