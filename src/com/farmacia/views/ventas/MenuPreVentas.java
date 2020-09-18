@@ -1045,7 +1045,13 @@ public class MenuPreVentas extends javax.swing.JDialog {
 
             TxtProdNombre.setText(objProd.getProducto_nombre());
             TxtProdPrecio.setText(objProd.getPrecio_venta().setScale(2, BigDecimal.ROUND_HALF_UP).toEngineeringString());
-            TxtDescuentoPorcentaje.setText(objProd.getDescuento().toString());
+            int num=0;
+            if(objProd.getDescuento()== null){
+                TxtDescuentoPorcentaje.setText("0");  
+            }else{
+             TxtDescuentoPorcentaje.setText(objProd.getDescuento().toString());   
+            }
+           
         }
 
 

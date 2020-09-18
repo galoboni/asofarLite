@@ -973,7 +973,7 @@ public class Tablas {
         tcr.setHorizontalAlignment(SwingConstants.CENTER);
         tcr1.setHorizontalAlignment(SwingConstants.RIGHT);
         model = Tablas.VaciarTabla(Tabla);
-        String[] Co = {"CODIGO", "MARCA", "TIPO", "PRODUCTO", "ENVASE", "MEDIDA", "CANTIDAD"};
+        String[] Co = {"CODIGO", "MARCA", "TIPO", "PRODUCTO", "PRESENTACION", "MEDIDA", "CANTIDAD"};
         String[] Filas = new String[7];
         model = new DefaultTableModel(null, Co);
         Tabla.setShowGrid(true);
@@ -1258,7 +1258,7 @@ public class Tablas {
         tcr.setHorizontalAlignment(SwingConstants.CENTER);
         tcr1.setHorizontalAlignment(SwingConstants.RIGHT);
         model = Tablas.VaciarTabla(Tabla);
-        String[] Co = {"CODIGO", "MARCA", "TIPO", "PRODUCTO", "ENVASE", "MEDIDA", "CANTIDAD", "BONO", "PRECIO", "DESCUENTO", "IVA", "TOTAL"};
+        String[] Co = {"CODIGO", "MARCA", "TIPO", "PRODUCTO", "PRESENTACION", "MEDIDA", "CANTIDAD", "BONO", "PRECIO", "DESCUENTO", "IVA", "TOTAL"};
         String[] Filas = new String[12];
         model = new DefaultTableModel(null, Co);
         Tabla.setShowGrid(true);
@@ -1312,11 +1312,11 @@ public class Tablas {
         tcr.setHorizontalAlignment(SwingConstants.CENTER);
         tcr1.setHorizontalAlignment(SwingConstants.RIGHT);
         model = Tablas.VaciarTabla(Tabla);
-        String[] Co = {"N#", "CODIGO", "MARCA", "TIPO", "PRODUCTO", "ENVASE", "MEDIDA", "CANTIDAD", "PRECIO", "DESCUENTO", "IVA", "TOTAL"};
+        String[] Co = {"N#", "CODIGO", "MARCA", "TIPO", "PRODUCTO", "PRESENTACION", "MEDIDA", "CANTIDAD", "PRECIO", "DESCUENTO", "IVA", "TOTAL"};
         String[] Filas = new String[12];
-        model = new DefaultTableModel(null, Co);
+        model = new DefaultTableModel(null, Co); 
         Tabla.setShowGrid(true);
-        for (int i = 0; i < lista.size(); i++) {
+        for (int i = 0; i < lista.size(); i++) { 
             Filas[0] = "" + lista.get(i).getId_detalle_nota_pedido().toString();
             Filas[1] = "" + lista.get(i).getId_producto().toString();
             Filas[2] = lista.get(i).getMarca();
@@ -1361,13 +1361,13 @@ public class Tablas {
 
     public static void cargarJoinProductosVentas(JTable Tabla, ArrayList<JoinListarProductosVentas> lista) {
 
-        int[] a = {10, 30, 52, 30, 30, 30, 30, 30, 30, 30, 30};
+        int[] a = {100,130,200,130,80,130,80,80,80,80,10};
         DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
         DefaultTableCellRenderer tcr1 = new DefaultTableCellRenderer();
         tcr.setHorizontalAlignment(SwingConstants.CENTER);
-        tcr1.setHorizontalAlignment(SwingConstants.RIGHT);
+        tcr1.setHorizontalAlignment(SwingConstants.RIGHT); 
         model = Tablas.VaciarTabla(Tabla);
-        String[] Co = {"CODIGO", "PRODUCTO", "DESCRIPCION", "TIPO", "MEDIDA", "ENVASE", "MARCA", "STOCK", "IVA", "PRECIO VENTA", "DESCUENTO"};
+        String[] Co = {"CODIGO", "PRODUCTO", "DESCRIPCION", "TIPO", "MEDIDA", "PRESENTACION", "MARCA", "STOCK", "IVA", "PRECIO VENTA", "DESCUENTO"};
         String[] Filas = new String[11];
         model = new DefaultTableModel(null, Co);
         Tabla.setShowGrid(true);
@@ -1646,7 +1646,7 @@ public class Tablas {
         tcr.setHorizontalAlignment(SwingConstants.CENTER);
         tcr1.setHorizontalAlignment(SwingConstants.RIGHT);
         model = Tablas.VaciarTabla(Tabla);
-        String[] Co = {"CODIGO", "MARCA", "TIPO", "PRODUCTO", "ENVASE", "MEDIDA", "CANTIDAD", "PRECIO", "DESCUENTO", "IVA", "TOTAL"};
+        String[] Co = {"CODIGO", "MARCA", "TIPO", "PRODUCTO", "PRESENTACION", "MEDIDA", "CANTIDAD", "PRECIO", "DESCUENTO", "IVA", "TOTAL"};
         String[] Filas = new String[11];
         model = new DefaultTableModel(null, Co);
         Tabla.setShowGrid(true);
@@ -1918,7 +1918,7 @@ public class Tablas {
         tcr.setHorizontalAlignment(SwingConstants.CENTER);
         tcr1.setHorizontalAlignment(SwingConstants.RIGHT);
         model = Tablas.VaciarTabla(Tabla);
-        String[] Co = {"CODIGO", "PRODUCTO", "DESCRIPCION", "PRECIO COMPRA", "STOCK","TIPO","MEDIDA","ENVASE","MARCA" };
+        String[] Co = {"CODIGO", "PRODUCTO", "DESCRIPCION", "PRECIO COMPRA", "STOCK","TIPO","MEDIDA","PRESENTACION","MARCA" };
         //   Date[] Ca = {Date.valueOf("Fecha")};
         String[] Filas = new String[9];
         //  Date[] Fila = new Date [1];

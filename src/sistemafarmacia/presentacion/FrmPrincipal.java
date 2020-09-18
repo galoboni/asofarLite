@@ -816,7 +816,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmVentaReporteActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+    Reporte_Venta Rv = new Reporte_Venta(this, rootPaneCheckingEnabled);
+            Rv.setVisible(rootPaneCheckingEnabled);        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jmLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmLocalActionPerformed

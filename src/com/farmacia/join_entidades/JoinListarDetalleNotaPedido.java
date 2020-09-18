@@ -20,7 +20,11 @@ public class JoinListarDetalleNotaPedido {
     private Long id_marca;
     private String marca;
     private Long  id_tipo;
-    private String tipo;
+    private String tipo;  
+    private Long id_presentacion;
+    private String presentacion;
+    private Long id_categoria;
+    private String categoria;   
     private Long id_envase;
     private String envase;
     private Long id_medida;
@@ -36,7 +40,7 @@ public class JoinListarDetalleNotaPedido {
     public JoinListarDetalleNotaPedido() {
     }
 
-    public JoinListarDetalleNotaPedido(Long id_detalle_nota_pedido, Long id_precio, Long id_producto, String producto, Long id_marca, String marca, Long id_tipo, String tipo, Long id_envase, String envase, Long id_medida, String medida, Long id_cabecera_nota_pedido, Integer cantidad, Integer bono, BigDecimal precio, BigDecimal descuento, BigDecimal iva, BigDecimal total) {
+    public JoinListarDetalleNotaPedido(Long id_detalle_nota_pedido, Long id_precio, Long id_producto, String producto, Long id_marca, String marca, Long id_tipo, String tipo,Long id_presentacion,String presentacion, Long id_categoria,String categoria ,Long id_envase, String envase, Long id_medida, String medida, Long id_cabecera_nota_pedido, Integer cantidad, Integer bono, BigDecimal precio, BigDecimal descuento, BigDecimal iva, BigDecimal total) {
         this.id_detalle_nota_pedido = id_detalle_nota_pedido;
         this.id_precio = id_precio;
         this.id_producto = id_producto;
@@ -45,6 +49,10 @@ public class JoinListarDetalleNotaPedido {
         this.marca = marca;
         this.id_tipo = id_tipo;
         this.tipo = tipo;
+        this.id_presentacion = id_presentacion;
+        this.presentacion = presentacion;
+        this.id_categoria=id_categoria;
+        this.categoria=categoria;
         this.id_envase = id_envase;
         this.envase = envase;
         this.id_medida = id_medida;
