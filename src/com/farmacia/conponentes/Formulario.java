@@ -111,7 +111,7 @@ public class Formulario {
 
     }
 
-    public static DefaultComboBoxModel listarComboEnvasePro(ArrayList<PresentacionProducto> lista) {
+    public static DefaultComboBoxModel listarComboPresentacionPro(ArrayList<PresentacionProducto> lista) {
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         Object[] arreglo = arreglo3(lista);
         System.out.println(lista.size() + " tam " + arreglo.length);

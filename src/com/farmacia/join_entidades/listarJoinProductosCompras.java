@@ -23,6 +23,8 @@ public class listarJoinProductosCompras {
     private String nombreMedida;
     private Long id_presentacion;
     private String nombrePresentacion;
+    private Long id_categoria;
+    private String nombreCategoria;
     private Long id_marca;
     private String nombreMarca;
     private Long id_usuario;
@@ -38,7 +40,9 @@ public class listarJoinProductosCompras {
     public listarJoinProductosCompras() {
     }
 
-    public listarJoinProductosCompras(Long id_productos, String nombreProductos, String descripcion, Date fecha_registro, Double peso, Long id_tipo, String nombreTipo, Long id_medida, String nombreMedida, Long id_presentacion, String nombrePresentacion, Long id_marca, String nombreMarca, Long id_usuario, String iva, Long cantidad_minima, Double precioCompra, Long cantidadStock, Long idStock, String receta, Long unidades, String codigo_barras) {
+    public listarJoinProductosCompras(Long id_categoria, String nombreCategoria,Long id_productos, String nombreProductos, String descripcion, Date fecha_registro, Double peso, Long id_tipo, String nombreTipo, Long id_medida, String nombreMedida, Long id_presentacion, String nombrePresentacion, Long id_marca, String nombreMarca, Long id_usuario, String iva, Long cantidad_minima, Double precioCompra, Long cantidadStock, Long idStock, String receta, Long unidades, String codigo_barras) {
+        this.id_categoria = id_categoria;
+        this.nombreCategoria = nombreCategoria;
         this.id_productos = id_productos;
         this.nombreProductos = nombreProductos;
         this.descripcion = descripcion;
@@ -62,6 +66,24 @@ public class listarJoinProductosCompras {
         this.unidades = unidades;
         this.codigo_barras = codigo_barras;
     }
+
+    public Long getId_categoria() {
+        return id_categoria;
+    }
+
+    public void setId_categoria(Long id_categoria) {
+        this.id_categoria = id_categoria;
+    }
+
+    public String getNombreCategoria() {
+        return nombreCategoria;
+    }
+
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
+    }
+    
+    
 
     public Long getId_productos() {
         return id_productos;

@@ -40,7 +40,7 @@ public class MantenimientoProducto extends javax.swing.JDialog {
     listarJoinProductosCompras objeto = null;
     static ArrayList<listarJoinProductosCompras> listar = null;
     ArrayList<joinProductoDetallesFaltantes> lista1 = new ArrayList<joinProductoDetallesFaltantes>();
-    ArrayList<listarJoinProductosCompras> lista = crud.listarTodoJoinProductos(1);
+    ArrayList<listarJoinProductosCompras> lista = crud.listarTodoJoinProductos(1); 
     int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
     int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
     Listar_usuario objUsuario=null;
@@ -270,7 +270,7 @@ public class MantenimientoProducto extends javax.swing.JDialog {
                 objeto = devuelveObjeto(tbacargarProductos.getValueAt(i, 0).toString(), lista);
                 if (objeto != null) {
                     System.out.println("holaaaaa");
-                    modificarProducto acc = new modificarProducto(new javax.swing.JFrame(), true, objeto);
+                    modificarProducto acc = new modificarProducto(new javax.swing.JFrame(), true, objeto,objUsuario);
                     acc.setVisible(true);
                     lista.clear();
                     lista = crud.listarTodoJoinProductos(1);

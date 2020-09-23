@@ -75,7 +75,7 @@ public class covertidor extends javax.swing.JDialog {
         
         cbxTipos1.setModel(Formulario.listarComboTipoPro(lista));
         cbxMedida1.setModel(Formulario.listarComboMedidaPro(listam));
-        cbxEnvase1.setModel(Formulario.listarComboEnvasePro(listae));
+        cbxEnvase1.setModel(Formulario.listarComboPresentacionPro(listae));
         cbxMarca1.setModel(Formulario.listarComboMarcaPro(listama));
         
         str_tipo = crud.getNombreComboProducto(Long.valueOf("1"), obj.getId_tipo());
@@ -959,7 +959,7 @@ public class covertidor extends javax.swing.JDialog {
         AgregarEnvase agreenv = new AgregarEnvase(new javax.swing.JFrame(), true);
         agreenv.setVisible(true);
         listae = crud.listarTodoPresentacionProductos();
-        cbxEnvase4.setModel(Formulario.listarComboEnvasePro(listae));
+        cbxEnvase4.setModel(Formulario.listarComboPresentacionPro(listae));
     }//GEN-LAST:event_btnAgreEnvase4ActionPerformed
 
     private void cbxEnvase1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEnvase1ActionPerformed
@@ -1029,7 +1029,7 @@ public class covertidor extends javax.swing.JDialog {
         
         cbxTipos4.setModel(Formulario.listarComboTipoPro(lista));
         cbxMedida4.setModel(Formulario.listarComboMedidaPro(listam));
-        cbxEnvase4.setModel(Formulario.listarComboEnvasePro(listae));
+        cbxEnvase4.setModel(Formulario.listarComboPresentacionPro(listae));
         cbxMarca4.setModel(Formulario.listarComboMarcaPro(listama));
         
         str_tipo = crud.getNombreComboProducto(Long.valueOf("1"), obj.getId_tipo());
@@ -1199,7 +1199,7 @@ public class covertidor extends javax.swing.JDialog {
 //        listama = crud.listarTodoMarcaProductos();
         cbxTipos3.setModel(Formulario.listarComboTipoPro(lista));
         cbxMedida3.setModel(Formulario.listarComboMedidaPro(listam));
-        cbxEnvase3.setModel(Formulario.listarComboEnvasePro(listae));
+        cbxEnvase3.setModel(Formulario.listarComboPresentacionPro(listae));
         cbxMarca3.setModel(Formulario.listarComboMarcaPro(listama));
         
         str_tipo = crud.getNombreComboProducto(Long.valueOf("1"), objeto.getId_tipo());

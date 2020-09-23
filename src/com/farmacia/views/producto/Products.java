@@ -64,7 +64,7 @@ public class Products extends javax.swing.JDialog {
         cbxTipos.setModel(Formulario.listarComboTipoPro(lista));
         cbxCategoria.setModel(Formulario.listarComboCategoriaPro(listaca));
         cbxMedida.setModel(Formulario.listarComboMedidaPro(listam));
-        cbxPresentacion.setModel(Formulario.listarComboEnvasePro(listae));
+        cbxPresentacion.setModel(Formulario.listarComboPresentacionPro(listae));
         cbxMarca.setModel(Formulario.listarComboMarcaPro(listama));
         cbxIva.setModel(Formulario.listarComboIva(listaIva));
         txtFechaActual.setText(FechaActual());
@@ -81,7 +81,7 @@ public class Products extends javax.swing.JDialog {
         cbxTipos.setModel(Formulario.listarComboTipoPro(lista));
         cbxCategoria.setModel(Formulario.listarComboCategoriaPro(listaca));
         cbxMedida.setModel(Formulario.listarComboMedidaPro(listam));
-        cbxPresentacion.setModel(Formulario.listarComboEnvasePro(listae));
+        cbxPresentacion.setModel(Formulario.listarComboPresentacionPro(listae));
         cbxMarca.setModel(Formulario.listarComboMarcaPro(listama));
         cbxIva.setModel(Formulario.listarComboIva(listaIva));
         txtFechaActual.setText(FechaActual());
@@ -719,7 +719,7 @@ public class Products extends javax.swing.JDialog {
         Presentaciones_Nuevo tn = new Presentaciones_Nuevo(new javax.swing.JFrame(), true,obj_usu);
         tn.setVisible(true);
         listae = crud.listarTodoPresentacionProductos();
-        cbxPresentacion.setModel(Formulario.listarComboEnvasePro(listae));
+        cbxPresentacion.setModel(Formulario.listarComboPresentacionPro(listae));
     }//GEN-LAST:event_btnAgreEnvaseActionPerformed
 
     private void cbxPresentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPresentacionActionPerformed

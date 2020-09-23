@@ -139,6 +139,8 @@ public class EntidadesMappers {
             obj.setNombreMedida(rs.getString("MEDIDA"));
             obj.setId_Presentacion(rs.getLong("ID_PRESENTACION"));
             obj.setNombrePresentacion(rs.getString("PRESENTACION"));
+            obj.setId_categoria(rs.getLong("ID_CATEGORIA"));
+            obj.setNombreCategoria(rs.getString("CATEGORIA"));
             obj.setId_marca(rs.getLong("ID_MARCAS"));
             obj.setNombreMarca(rs.getString("MARCA"));
             obj.setId_usuario(rs.getLong("ID_USUARIO"));
